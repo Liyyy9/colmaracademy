@@ -1,0 +1,104 @@
+@import url('href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Source+Sans+Pro:wght@300;400&display=swap"');
+
+/* Resetting CSS */
+* {
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+/* Start of Desktop Section */
+
+/* Set up for nav bar desktop */
+.desktop-nav {
+    grid-column: full--start / full--end;
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #828282;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
+
+.nav-link:hover { /* change links color on hover*/
+    color: orange;
+}
+
+.nav-item:last-child { /* shifts the last item in nav bar 24px/1.5rem away from the right */
+    margin-right: 1.5rem;
+}
+
+/* logo styles */
+.logo {
+    height: 2rem;
+    width: auto;
+    padding-left: 1.5rem
+}
+
+.logo-name {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.bold {
+    color: #484848;
+    font-weight: bold;
+}
+
+.thin {
+    color: #AAA;
+    font-weight: 400;
+}
+
+.desktop-nav > a { /* to remove the line under COLMAR ACADEMY*/
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+/* End of Desktop Section */
+/* ******************************************************************************* */
+
+/* Start of Mobile Section */
+
+    /* Set up for nav bar mobile */
+.mobile-nav {
+    display: none;
+}
+
+/* maxwidth set at 40rem/640px, mobile nav will only be displayed when it hits that point */
+@media screen and (max-width: 40rem){
+
+    .mobile-nav { /*shows up at maxwidth*/
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 4rem;
+    }
+
+    .desktop-nav { /*disappears at maxwidth*/
+        display: none;
+    }
+}
+
+/* End of Mobile Section */
+/* ******************************************************************************* */
