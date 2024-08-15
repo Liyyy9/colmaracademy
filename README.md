@@ -36,7 +36,7 @@
 ```
 #### Explanation: 
 
-- * Selector: Targets every element on the page.
+- (*) Universal Selector: Targets every element on the page.
 
 - margin: 0px: Sets the space outside of every element to zero, removing default margins that browsers might apply.
 
@@ -46,8 +46,28 @@
 
 So, this CSS rule is useful for creating a consistent starting point for styling by eliminating extra space and making size calculations straightforward.
 
+### 2. IMPORTANT NOTE ON **CSS SPECIFICITY**
 
-### 2. MEDIA QUERY
+Universal selector (*) targets every element (regardless tag, class, ID)
+If pseudo class :root is used, :root takes priority over html
+When applied, font size of 5px takes priority over that of html
+Here, html selector takes priority as root element over universal selector
+```
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* :root{ font-size: 5px; } */
+
+    html, body{
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+        font-size: 16px;
+    }
+```
+
+### 3. MEDIA QUERY
 
 #### Media Query 
 ```

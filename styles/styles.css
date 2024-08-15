@@ -1,21 +1,29 @@
 @import url('href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Source+Sans+Pro:wght@300;400&display=swap"');
 
 /* Resetting CSS */
-* {
-    font-size: 16px;
-    margin: 0px;
-    padding: 0px;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    font-family: "Lato", sans-serif;
-}
+/* If pseudo class :root is used, :root takes priority over html element */
+/* When applied, font size of 5px takes priority over that of html */
+/* :root{ font-size: 5px; } */
 
-html {
+/* Here, html selector takes priority as root element over universal selector */
+html, body{
     box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
 }
 
-/* Start of Desktop Section */
+.container {
+    display: grid;
+    grid-template-columns: [full--start] 0.6fr [center--end center--start] 0.4fr [full--end];
+    grid-template-rows: repeat(6, min-content);
+}
+/* ******************************************************************************* */
+                            /* Start of Desktop Section */
 
 /* Set up for nav bar desktop */
 .desktop-nav {
@@ -75,10 +83,135 @@ html {
     display: flex;
     align-items: center;
 }
-/* End of Desktop Section */
+
+
+                            /* Start of HEADER Section */
+/* Setting up header area */
+.header-pic {
+    background-color: #C8C8C8;
+    display: flex;
+}
+
+.header-pic img {
+    width: 100%;
+    height: auto;
+    padding: 2rem 0 2rem 1.5rem;
+}
+
+.header-content {
+    background-color: #C8C8C8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1.5rem;
+}
+
+.header-content div h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #484848;
+}
+
+.header-content div h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem 0;
+    color: #484848;
+}
+
+.header-content div {
+    display: block;
+    width: 80%;
+}
+
+.start_btn { /* .header-content > a*/
+    display: block;
+    width: 100%;
+    align-self: stretch;
+    margin: 1rem auto;
+    padding: 0.5rem 0;
+    background-color: #484848;
+    color: #FFF;
+    font-size: 0.8rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* setting up start button color when hover, active, visited*/
+.start_btn:hover {
+    background-color: rgba(48, 48, 48, 0.5);
+}
+
+.start_btn:active,
+.start_btn:visited {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #484848;
+}
+                            /* End of HEADER Section */
+
+                           /* Start of PRACTICE Section */
+/* Setting up practice section */
+.practice {
+    background-color: #F0F0F0;
+}
+
+.practice img {
+    width: 100%;
+    height: auto;
+    padding: 2rem 0 2rem 1.5rem;
+}
+
+.practice h3 {
+    padding: 0 0 1.5rem 1.5rem;
+}
+
+.practice p {
+    font-size: small;
+    padding: 0 1.5rem;
+}
+
+.quote-name {
+    display: block;
+    margin: 2rem 0;
+}
+
+.events {
+    background-color: #F0F0F0;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    border-left: 1px solid #e7e7e7;
+}
+
+.event-block {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.event-block img {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+
+.event-block-content {
+    margin-left: 2rem;
+}
+
+.event-block-content a {
+    text-decoration: none;
+    color: #5898e3;
+}
+                           /* End of PRACTICE Section */
+
+                            /* End of Desktop Section */
 /* ******************************************************************************* */
 
-/* Start of Mobile Section */
+
+/* ******************************************************************************* */
+                            /* Start of Mobile Section */
 
     /* Set up for nav bar mobile */
 .mobile-nav {
@@ -92,13 +225,72 @@ html {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        grid-column: full--start / full--end;
         height: 4rem;
     }
 
     .desktop-nav { /*disappears at maxwidth*/
         display: none;
     }
+
+    .container {
+        max-width: 100dvw;
+    }
+
+    .header-pic {
+        grid-column: full--start / full--end;
+    }
+    
+    .header-pic img {
+        padding: 0;
+    }
+
+    .header-content {
+        display: flex;
+        grid-column: full--start / full--end;
+        padding: 2rem 1rem 2rem 1rem;
+    }
+
+    .header-content div h1 {
+        font-size: xx-large;
+        padding: 0 0 2rem 0;
+    }
+
+    .header-content div h2 {
+        font-size: larger;
+        padding: 0 0 1.5rem 0;
+    }
+
+    .header-content div {
+        display: block;
+        width: 100%;
+    }
+    
+    .start_btn { /* .header-content > a*/
+        display: block;
+        width: 100%;
+        align-self: stretch;
+        background-color: rgb(72, 72, 72,0.5);
+        color: #FFF;
+        font-size: 1rem;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    /* setting up start button color when hover, active, visited*/
+    .start_btn:hover {
+        background-color: rgba(48, 48, 48);
+    }
+    
+    .start_btn:active,
+    .start_btn:visited {
+        color: #FFF;
+        text-decoration: none;
+        background-color: #484848;
+    }
 }
 
-/* End of Mobile Section */
+                            /* End of Mobile Section */
 /* ******************************************************************************* */
+
+
