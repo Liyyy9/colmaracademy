@@ -566,6 +566,7 @@ footer a:hover { /* change links color on hover*/
     
     footer {
         padding-top: 1.5rem;
+        border: none;
     }
 
 /* learning mobile version */
@@ -585,7 +586,7 @@ footer a:hover { /* change links color on hover*/
         flex-direction: column;
         justify-content: center;
         width: 100%;
-
+        margin-bottom: 2rem;
     }
 
     .mobile-learning a {
@@ -603,10 +604,14 @@ footer a:hover { /* change links color on hover*/
         font-size: large;
         font-weight: 600;
         background-color: #D8D8D8;
-        margin: 1rem;
+        margin: 1rem 1rem 0.5rem 1rem;
         font-size: 1.2rem;
         padding: 1.5rem 0 1.5rem 1rem;
         color: #4b4b4b;
+    }
+
+    .li-last-child {
+        margin-bottom: 10rem;
     }
 
     .learning-heading-mobile {
@@ -614,6 +619,31 @@ footer a:hover { /* change links color on hover*/
         margin-top: 2rem;
         color: #4f4f4f;
     }
+
+    .thesis-left-content {
+        display: none;
+    }
+
+    .thesis-right {
+        display: none;
+    }
+    
+    .thesis {
+        border-top: 1px solid #e9eaea;
+        padding: 0 0;
+    }
+
+    .thesis-heading {
+        margin: 2rem;
+    }
+
+    .thesis-left {
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+        grid-column: full--start / full--end;
+        height: auto;
+    }
+
 }
 
                             /* End of Mobile Section */
